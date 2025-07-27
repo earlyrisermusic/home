@@ -1,166 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Early Riser</title>
+body {
+  background-color: hsl(283, 79%, 86%);
+  color: #000;
+  font-family: 'Source Code Pro', monospace;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+a {
+  color: #5b2a86;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro&display=swap" rel="stylesheet">
+/* Navigation */
+nav {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav a {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px; /* slightly larger */
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: hsl(283, 79%, 86%); /* light purple hover color */
+}
+.nav-logo img {
+  width: 200px;
+  display: block;
+}
 
-  <style>
-    body {
-      background-color: hsl(283, 79%, 86%);
-      color: #000;
-      font-family: 'Source Code Pro', monospace;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    a {
-      color: #5b2a86;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+/* Banner */
+header img.banner {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-    /* Navigation */
-    nav {
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 20px;
-      gap: 40px;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      color: #fff;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 14px;
-    }
-    .nav-logo img {
-      width: 200px;
-      display: block;
-    }
+/* Sections */
+section {
+  padding: 20px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+h2 {
+  font-family: 'Abel', sans-serif;
+  color: hsl(284, 80%, 28%);
+  text-align: center;
+  font-size: 30pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 30px 0 20px 0;
+}
+.quote {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.quote a {
+  font-style: normal;
+}
 
-    /* Banner */
-    header img.banner {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+iframe, .bit-widget-initializer {
+  width: 100%;
+  max-width: 100%;
+}
 
-    /* Sections */
-    section {
-      padding: 20px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    h2 {
-      font-family: 'Abel', sans-serif;
-      color: hsl(284, 80%, 28%);
-      text-align: center;
-      font-size: 30pt;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin: 30px 0 20px 0;
-    }
-    .quote {
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-    .quote a {
-      font-style: normal;
-    }
+/* Responsive Video */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-    iframe, .bit-widget-initializer {
-      width: 100%;
-      max-width: 100%;
-    }
-
-    /* Social footer */
-    footer.social-icons {
-      text-align: center;
-      padding: 20px 10px;
-      background: #000;
-    }
-    footer.social-icons a {
-      margin: 0 10px;
-      font-size: 16px;
-      color: #fff;
-    }
-    footer.social-icons a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#music">Music</a>
-    <a href="#video">Video</a>
-    <div class="nav-logo">
-      <img src="https://images.squarespace-cdn.com/content/v1/596fb2edcd39c399278f168c/aa66a144-d894-4282-a157-72e5e899697a/ER+Purple+on+Black+Logo.png?format=1500w" alt="Early Riser Logo" />
-    </div>
-    <a href="#shows">Shows</a>
-    <a href="https://earlyriserrr.bandcamp.com/merch" target="_blank">Merch</a>
-  </nav>
-
-  <!-- Banner -->
-  <header>
-    <img class="banner" src="https://images.squarespace-cdn.com/content/v1/596fb2edcd39c399278f168c/1723334858279-IVWO4RPGG6G91CBTRXYJ/ER+Site+Banner+White.png?format=2500w" alt="Early Riser Banner" />
-  </header>
-
-  <!-- Sections -->
-  <section>
-    <h2>NEW ALBUM <a href="https://earlyriserrr.bandcamp.com/album/big-life" target="_blank">BIG LIFE</a> OUT NOW</h2>
-    <p class="quote">“<a href="https://offshelf.net/2024/12/12/best-of-2024-jim-testa/" target="_blank">Off Shelf</a>: My favorite pop-punk release of the year.”</p>
-    <p class="quote">“<a href="https://toomuchrock.com/podcasts/play?podnum=712&" target="_blank">Too Much Rock</a>: Perfect songs, just catchy as hell.”</p>
-    <p class="quote">“<a href="https://addtowantlist.com/index.php/2024/10/11/new-album-early-riser-big-life/" target="_blank">Add to Want List</a>: The band sounds more confident than ever... Big Life is a superb collection of songs that would shine on any live stage.”</p>
-  </section>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>Early Riser is a cello-driven pop-punk band from Brooklyn, NY. They originally formed as an acoustic duo of Kiri Oliver (vocals/guitar) and Heidi Vanderlee (cello/vocals), who released their debut album <em>Currents</em> in 2017. They found their permanent lineup and evolved their sound with the addition of rhythm section Nicole Nussbaum (bass/vocals) and Mikey Erg (drums/vocals), resulting in 2021’s <em>Vocations</em>.</p>
-    <p>Inspired by the songwriting of The Mountain Goats, Against Me!, AJJ, and The Front Bottoms, Kiri writes clever, relatable lyrics about mental health, social relationships, and figuring out what’s important to you. She has a knack for capturing life’s challenges with a sense of humor and a focus on positivity and growth. Her words are elevated by the band’s soaring cello riffs, driving rhythms, and tight vocal harmonies.</p>
-    <p>Early Riser’s third album, <a href="https://earlyriserrr.bandcamp.com/album/big-life" target="_blank">Big Life</a> (Asbestos Records, 2024) was helmed by legendary indie rock producer John Agnello (Sonic Youth, The Hold Steady, Waxahatchee) and packs their biggest punch yet with a set of fun and fierce sing-along anthems that explore themes of isolation and connection.</p>
-    <p>They have also had the honor of covering songs about cats for the official tributes to two of their favorite artists, <a href="https://theweakerthanstribute.bandcamp.com/album/one-great-tribute-a-love-letter-to-the-weakerthans" target="_blank">The Weakerthans</a> and <a href="https://jackterriclothfoundation.bandcamp.com/album/endless-possibility-a-tribute-to-jack-terricloth" target="_blank">Jack Terricloth</a>.</p>
-    <p><small>(Photo credit: <a href="https://jeanettedmoses.com/" target="_blank">Jeannette D. Moses</a>)</small></p>
-  </section>
-
-  <section id="music">
-    <h2>Music</h2>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6ZliVEoAjw5pREqbOJApEG?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <p><a href="https://distrokid.com/hyperfollow/earlyriser2/big-life" target="_blank">Listen on other streaming platforms</a></p>
-  </section>
-
-  <section id="video">
-    <h2>Video</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/7JGwGodIGiE?si=E-GYjvfzhm7rPejq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <p><a href="https://www.youtube.com/@earlyriserband" target="_blank">Watch more videos</a></p>
-  </section>
-
-  <section id="shows">
-    <h2>Shows</h2>
-    <script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
-    <a class="bit-widget-initializer" data-artist-name="id_3859085"></a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="social-icons">
-    <a href="http://instagram.com/earlyriseband" target="_blank">Instagram</a> |
-    <a href="http://facebook.com/earlyriserrr" target="_blank">Facebook</a> |
-    <a href="http://tiktok.com/@earlyriserband" target="_blank">TikTok</a> |
-    <a href="https://www.youtube.com/channel/UCDvFwcI_KlmdDLaP3TEO-Mg" target="_blank">YouTube</a>
-  </footer>
-
-</body>
-</html>
+/* Social footer */
+footer.social-icons {
+  text-align: center;
+  padding: 20px 10px;
+  background: #000;
+}
+footer.social-icons a {
+  margin: 0 10px;
+  font-size: 16px;
+  color: #fff;
+}
+footer.social-icons a:hover {
+  text-decoration: underline;
+}
