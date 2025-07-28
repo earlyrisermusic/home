@@ -13,20 +13,20 @@
       color: black;
       line-height: 1.5;
     }
+
+    /* NAVIGATION */
     nav {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
+      gap: 2rem;
       background: black;
       padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      flex-wrap: wrap;
     }
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -35,7 +35,7 @@
       color: white;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1rem;
       text-transform: uppercase;
     }
     nav a:hover {
@@ -45,13 +45,15 @@
       width: 200px;
       object-fit: contain;
     }
+
+    /* HEADER IMAGE */
     header img.banner {
       width: 100%;
-      max-height: 400px;
-      object-fit: contain;
+      height: auto;
       display: block;
-      margin: 0 auto;
     }
+
+    /* TYPOGRAPHY */
     h1, h2 {
       font-family: 'Abel', sans-serif;
       color: hsl(284, 80%, 28%);
@@ -68,12 +70,12 @@
       font-size: 30pt;
       font-weight: bold;
       text-transform: uppercase;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       margin-bottom: 1rem;
     }
     section {
       max-width: 900px;
-      margin: 0 auto 2rem auto;
+      margin: 0 auto 1.5rem auto;
       padding: 0 1rem;
     }
     a.inline-link {
@@ -83,14 +85,13 @@
     a.inline-link:hover {
       text-decoration: underline;
     }
-    p {
-      margin-top: 0;
-    }
-    /* Reduce vertical spacing between sections */
+
+    /* Reduce extra spacing */
     section + h2 {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
-    /* Spotify iframe */
+
+    /* SPOTIFY */
     iframe.spotify-player {
       border-radius: 12px;
       width: 100%;
@@ -98,7 +99,8 @@
       border: none;
       margin-bottom: 1rem;
     }
-    /* Responsive YouTube container */
+
+    /* YOUTUBE RESPONSIVE */
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
@@ -116,37 +118,49 @@
       height: 100%;
       border-radius: 12px;
     }
-    /* Social media bar */
-    .social-bar {
-      text-align: center;
-      margin: 3rem 0 2rem;
+
+    /* BANDSINTOWN WRAPPER */
+    .bit-widget {
+      max-width: 900px;
+      margin: 0 auto 1.5rem auto;
     }
-    .social-bar a {
-      color: black;
-      margin: 0 15px;
+
+    /* FOOTER SOCIAL ICONS */
+    footer.social-bar {
+      background: black;
+      text-align: center;
+      padding: 20px 0;
+    }
+    footer.social-bar a {
       display: inline-block;
+      margin: 0 15px;
+    }
+    footer.social-bar img {
       width: 30px;
       height: 30px;
       vertical-align: middle;
-      fill: black;
-      transition: fill 0.3s ease;
     }
-    .social-bar a:hover {
-      fill: hsl(283, 79%, 86%);
-    }
-    .social-bar svg {
-      width: 30px;
-      height: 30px;
-      display: block;
-    }
-    /* Bandsintown embed minimal override */
-    .bit-widget {
-      max-width: 900px;
-      margin: 0 auto 2rem auto;
+
+    /* RESPONSIVE NAVIGATION */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .logo {
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- NAVIGATION -->
   <nav>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -162,64 +176,50 @@
     </ul>
   </nav>
 
+  <!-- HEADER IMAGE -->
   <header id="top">
     <img src="images/ERSITEBANNER.png" alt="Early Riser Banner" class="banner" />
   </header>
 
+  <!-- ABOUT -->
   <section id="about">
     <h1><a href="https://earlyriserrr.bandcamp.com/album/big-life" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">NEW ALBUM BIG LIFE OUT NOW</a></h1>
     <p><em>“My favorite pop-punk release of the year.”</em> — <a href="https://offshelf.net/2024/12/12/best-of-2024-jim-testa/" target="_blank" rel="noopener noreferrer" class="inline-link">Off Shelf</a></p>
     <p><em>“Perfect songs, just catchy as hell.”</em> — <a href="https://toomuchrock.com/podcasts/play?podnum=712&" target="_blank" rel="noopener noreferrer" class="inline-link">Too Much Rock</a></p>
     <p><em>“The band sounds more confident than ever, both in songwriting and execution. Big Life is a superb collection of songs that would shine on any live stage.”</em> — <a href="https://addtowantlist.com/index.php/2024/10/11/new-album-early-riser-big-life/" target="_blank" rel="noopener noreferrer" class="inline-link">Add to Want List</a></p>
 
-    <p>Early Riser is a cello-driven pop-punk band from Brooklyn, NY. They originally formed as an acoustic duo of Kiri Oliver (vocals/guitar) and Heidi Vanderlee (cello/vocals), who released their debut album Currents in 2017. They found their permanent lineup and evolved their sound with the addition of rhythm section Nicole Nussbaum (bass/vocals) and Mikey Erg (drums/vocals), resulting in 2021’s Vocations.</p>
-
-    <p>Inspired by the songwriting of The Mountain Goats, Against Me!, AJJ, and The Front Bottoms, Kiri writes clever, relatable lyrics about mental health, social relationships, and figuring out what’s important to you. She has a knack for capturing life’s challenges with a sense of humor and a focus on positivity and growth. Her words are elevated by the band’s soaring cello riffs, driving rhythms, and tight vocal harmonies.</p>
-
-    <p>Early Riser’s third album, <a href="https://earlyriserrr.bandcamp.com/album/big-life" target="_blank" rel="noopener noreferrer" class="inline-link">Big Life</a> (Asbestos Records, 2024) was helmed by legendary indie rock producer John Agnello (Sonic Youth, The Hold Steady, Waxahatchee) and packs their biggest punch yet with a set of fun and fierce sing-along anthems that explore themes of isolation and connection.</p>
-
-    <p>They have also had the honor of covering songs about cats for the official tributes to two of their favorite artists, <a href="https://theweakerthanstribute.bandcamp.com/album/one-great-tribute-a-love-letter-to-the-weakerthans" target="_blank" rel="noopener noreferrer" class="inline-link">The Weakerthans</a> and <a href="https://jackterriclothfoundation.bandcamp.com/album/endless-possibility-a-tribute-to-jack-terricloth" target="_blank" rel="noopener noreferrer" class="inline-link">Jack Terricloth</a>.</p>
-
-    <p><small>Photo credit: <a href="https://jeanettedmoses.com/" target="_blank" rel="noopener noreferrer" class="inline-link">Jeannette D. Moses</a></small></p>
+    <p>Early Riser is a cello-driven pop-punk band from Brooklyn, NY...</p>
   </section>
 
+  <!-- MUSIC -->
   <section id="music">
     <h2>MUSIC</h2>
-    <iframe class="spotify-player" src="https://open.spotify.com/embed/album/6ZliVEoAjw5pREqbOJApEG?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+    <iframe class="spotify-player" src="https://open.spotify.com/embed/album/6ZliVEoAjw5pREqbOJApEG?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     <p style="text-align:center;"><a href="https://distrokid.com/hyperfollow/earlyriser2/big-life" target="_blank" rel="noopener noreferrer" class="inline-link">Listen on other streaming platforms</a></p>
   </section>
 
+  <!-- VIDEO -->
   <section id="video">
     <h2>VIDEO</h2>
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/7JGwGodIGiE" title="Early Riser Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/7JGwGodIGiE" title="Early Riser Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen></iframe>
     </div>
     <p style="text-align:center;"><a href="https://www.youtube.com/@earlyriserband" target="_blank" rel="noopener noreferrer" class="inline-link">Watch more videos</a></p>
   </section>
 
+  <!-- SHOWS -->
   <section id="shows">
     <h2>SHOWS</h2>
-    <div class="bit-widget" data-artist-name="id_3859085" data-events-to-display="" data-background-color="rgba(255,255,255,1)" data-separator-color="rgba(221,221,221,1)" data-text-color="rgba(66,66,66,1)" data-font="Helvetica" data-auto-style="true" data-button-label-capitalization="uppercase" data-header-capitalization="uppercase" data-location-capitalization="uppercase" data-venue-capitalization="uppercase" data-display-local-dates="true" data-local-dates-position="tab" data-display-past-dates="false" data-display-details="false" data-display-lineup="false" data-display-start-time="false" data-social-share-icon="false" data-display-limit="all" data-date-format="MMM. D, YYYY" data-date-orientation="horizontal" data-date-border-color="#4A4A4A" data-date-border-width="1px" data-date-capitalization="capitalize" data-date-border-radius="10px" data-event-ticket-cta-size="medium" data-event-custom-ticket-text="" data-event-ticket-text="TICKETS" data-event-ticket-icon="false" data-event-ticket-cta-text-color="rgba(255,255,255,1)" data-event-ticket-cta-bg-color="rgba(74,74,74,1)" data-event-ticket-cta-border-color="rgba(74,74,74,1)" data-event-ticket-cta-border-width="0px" data-event-ticket-cta-border-radius="2px" data-sold-out-button-text-color="rgba(255,255,255,1)" data-sold-out-button-background-color="rgba(74,74,74,1)" data-sold-out-button-border-color="rgba(74,74,74,1)" data-sold-out-button-clickable="true" data-event-rsvp-position="left" data-event-rsvp-cta-size="medium" data-event-rsvp-only-show-icon="false" data-event-rsvp-text="RSVP" data-event-rsvp-icon="false" data-event-rsvp-cta-text-color="rgba(74,74,74,1)" data-event-rsvp-cta-bg-color="rgba(255,255,255,1)" data-event-rsvp-cta-border-color="rgba(74,74,74,1)" data-event-rsvp-cta-border-width="1px" data-event-rsvp-cta-border-radius="2px" data-follow-section-position="hidden" data-follow-section-alignment="center" data-follow-section-header-text="Get updates on new shows, new music, and more" data-follow-section-cta-size="medium" data-follow-section-cta-text="FOLLOW" data-follow-section-cta-icon="false" data-follow-section-cta-text-color="rgba(255,255,255,1)" data-follow-section-cta-bg-color="rgba(74,74,74,1)" data-follow-section-cta-border-width="0px" data-follow-section-cta-border-radius="0" data-language="en" data-layout-breakpoint="900" data-app-id="" data-affil-code="" data-bit-logo-position="bottomRight" data-bit-logo-color="rgba(66,66,66,1)"></div>
+    <div class="bit-widget" data-artist-name="id_3859085" data-events-to-display="" data-background-color="rgba(255,255,255,1)" data-separator-color="rgba(221,221,221,1)" data-text-color="rgba(66,66,66,1)" data-font="Helvetica" data-auto-style="true" data-button-label-capitalization="uppercase" data-header-capitalization="uppercase" data-location-capitalization="uppercase" data-venue-capitalization="uppercase" data-display-local-dates="true" data-local-dates-position="tab" data-display-past-dates="false" data-display-details="false" data-display-lineup="false" data-display-start-time="false" data-social-share-icon="false" data-display-limit="all" data-date-format="MMM. D, YYYY" data-date-orientation="horizontal" data-date-border-color="#4A4A4A" data-date-border-width="1px" data-date-capitalization="capitalize" data-date-border-radius="10px" data-event-ticket-cta-size="medium" data-event-ticket-text="TICKETS" data-event-ticket-cta-text-color="rgba(255,255,255,1)" data-event-ticket-cta-bg-color="rgba(74,74,74,1)" data-event-ticket-cta-border-color="rgba(74,74,74,1)" data-event-ticket-cta-border-width="0px" data-event-ticket-cta-border-radius="2px" data-sold-out-button-text-color="rgba(255,255,255,1)" data-sold-out-button-background-color="rgba(74,74,74,1)" data-sold-out-button-border-color="rgba(74,74,74,1)" data-sold-out-button-clickable="true" data-event-rsvp-position="hidden" data-follow-section-position="hidden" data-play-my-city-position="hidden" data-language="en" data-layout-breakpoint="900" data-bit-logo-position="bottomRight" data-bit-logo-color="rgba(66,66,66,1)"></div>
+    <script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
   </section>
 
+  <!-- FOOTER SOCIAL ICONS -->
   <footer class="social-bar">
-    <a href="http://instagram.com/earlyriseband" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-      <!-- Instagram SVG icon -->
-      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0120 7.75v8.5a3.75 3.75 0 01-3.75 3.75h-8.5A3.75 3.75 0 014 16.25v-8.5A3.75 3.75 0 017.75 4zm8.75 1a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/></svg>
-    </a>
-    <a href="http://facebook.com/earlyriserrr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-      <!-- Facebook SVG icon -->
-      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.87v-7h-2v-3h2v-2c0-2 1.2-3 3-3h2v3h-2a1 1 0 00-1 1v1h3l-1 3h-2v7A10 10 0 0022 12z"/></svg>
-    </a>
-
-    <a href="http://tiktok.com/@earlyriserband" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-      <!-- Placeholder for TikTok icon: replace with your SVG -->
-      <span style="font-size: 20px; line-height: 30px;">TikTok</span>
-    </a>
-    <a href="https://www.youtube.com/channel/UCDvFwcI_KlmdDLaP3TEO-Mg" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-      <!-- Placeholder for YouTube icon: replace with your SVG -->
-      <span style="font-size: 20px; line-height: 30px;">YouTube</span>
-    </a>
+    <a href="http://instagram.com/earlyriseband" target="_blank" rel="noopener noreferrer"><img src="images/instagram-white-icon.png" alt="Instagram"></a>
+    <a href="http://facebook.com/earlyriserrr" target="_blank" rel="noopener noreferrer"><img src="images/facebook-app-round-white-icon.png" alt="Facebook"></a>
+    <a href="http://tiktok.com/@earlyriserband" target="_blank" rel="noopener noreferrer"><img src="images/tiktok-white-icon.png" alt="TikTok"></a>
+    <a href="https://www.youtube.com/channel/UCDvFwcI_KlmdDLaP3TEO-Mg" target="_blank" rel="noopener noreferrer"><img src="images/youtube-app-white-icon.png" alt="YouTube"></a>
   </footer>
 </body>
 </html>
